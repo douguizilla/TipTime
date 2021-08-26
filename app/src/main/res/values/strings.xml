@@ -6,4 +6,6 @@
     <string name="eighteen_percentage_label">Good (18%)</string>
     <string name="fifteen_percentage_label">OK (15%)</string>
     <string name="roup_up_tip_label">Roung up tip?</string>
+    <string name="btn_calculate_label">calculate</string>
+    <string name="tip_amount_label">Tip Amount</string>
 </resources>
