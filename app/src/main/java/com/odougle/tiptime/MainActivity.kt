@@ -26,13 +26,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun calculateTip() {
         val stringOnPlainTextInput = binding.plainTextInput.text.toString()
-        val cost = stringOnPlainTextInput.toDouble()
+        val cost = stringOnPlainTextInput.toDoubleOrNull()
 
         val tipPercentage = when(binding.rgTipOptions.checkedRadioButtonId){
             R.id.rb_twenty -> 0.20
             R.id.rb_eighteen -> 0.18
             else -> 0.15
         }
+
+        if(cost == null) {
+            binding.tipResultText.text = getString(R.string.tip_amount_label)
+                return
+        }
+
         var tip = tipPercentage * cost
 
         if(binding.swRoundUpTip.isChecked){
