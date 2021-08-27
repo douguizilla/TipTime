@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
             else -> 0.15
         }
 
-        if(cost == null) {
-            binding.tipResultText.text = getString(R.string.tip_amount_label)
+        if(cost == null || cost == 0.0) {
+            displayTip(0.0)
                 return
         }
 
@@ -45,6 +45,10 @@ class MainActivity : AppCompatActivity() {
             tip = kotlin.math.ceil(tip)
         }
 
+        displayTip(tip)
+    }
+
+    private fun displayTip(tip: Double){
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
         binding.tipResultText.text = getString(R.string.tip_amount, formattedTip)
     }
