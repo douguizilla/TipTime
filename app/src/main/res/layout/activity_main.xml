@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:id="@+id/cima"
     tools:context=".MainActivity">
 
     <EditText
@@ -79,8 +80,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_calculate"
         android:text="@string/tip_amount_label"/>
-
-
 
 
 
