@@ -8,21 +8,52 @@
     android:id="@+id/cima"
     tools:context=".MainActivity">
 
-    <EditText
+    <ImageView
+        android:id="@+id/storeIcon"
+        android:src="@drawable/ic_store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/plain_text_input"
+        app:layout_constraintBottom_toBottomOf="@+id/plain_text_input"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/plain_text_input"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
+        android:layout_marginStart="16dp"
         android:hint="@string/cost_service_label"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/storeIcon"
         app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/plain_text_input_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/serviceIcon"
+        android:src="@drawable/ic_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/service_question_text"
+        app:layout_constraintBottom_toBottomOf="@+id/service_question_text"
         />
 
     <TextView
         android:id="@+id/service_question_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/serviceIcon"
         app:layout_constraintTop_toBottomOf="@+id/plain_text_input"
         android:text="@string/service_question_label"/>
 
@@ -54,10 +85,11 @@
             android:text="@string/fifteen_percentage_label"/>
     </RadioGroup>
 
-    <Switch
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/sw_round_up_tip"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:useMaterialThemeColors="true"
         android:text="@string/roup_up_tip_label"
         android:checked="true"
         app:layout_constraintEnd_toEndOf="parent"

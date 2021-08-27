@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calculateTip() {
-        val stringOnPlainTextInput = binding.plainTextInput.text.toString()
+        val stringOnPlainTextInput = binding.plainTextInputEdit.text.toString()
         val cost = stringOnPlainTextInput.toDoubleOrNull()
 
         val tipPercentage = when(binding.rgTipOptions.checkedRadioButtonId){
