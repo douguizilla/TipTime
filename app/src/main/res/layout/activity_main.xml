@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:checkedButton="@id/rb_twenty"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/service_question_text"
         app:layout_constraintTop_toBottomOf="@+id/service_question_text">
 
         <RadioButton
@@ -85,16 +85,29 @@
             android:text="@string/fifteen_percentage_label"/>
     </RadioGroup>
 
+    <ImageView
+        android:id="@+id/upTipIcon"
+        android:src="@drawable/ic_up_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sw_round_up_tip"
+        app:layout_constraintBottom_toBottomOf="@+id/sw_round_up_tip"
+        />
+
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/sw_round_up_tip"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         app:useMaterialThemeColors="true"
         android:text="@string/roup_up_tip_label"
         android:checked="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rg_tip_options"/>
+        app:layout_constraintStart_toEndOf="@+id/upTipIcon"
+        app:layout_constraintTop_toBottomOf="@+id/rg_tip_options"
+        />
 
     <Button
         android:id="@+id/btn_calculate"
